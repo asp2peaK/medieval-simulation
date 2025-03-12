@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Средневековая Симуляция</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="time-display">
+                <span id="year">1000</span>-<span id="month">01</span>-<span id="day">01</span>
+                <span id="day-time">Утро</span>
+            </div>
+            <div class="weather-display">
+                <span id="season">Весна</span>
+                <span id="weather">Ясно</span>
+            </div>
+        </header>
+        
+        <div class="event-log">
+            <h3>Глобальные события</h3>
+            <div id="global-events"></div>
+        </div>
+        
+        <div class="world-container">
+            <canvas id="world-map"></canvas>
+        </div>
+        
+        <div class="controls">
+            <button id="speed-1">x1</button>
+            <button id="speed-2">x2</button>
+            <button id="speed-3">x5</button>
+            <button id="pause">Пауза</button>
+        </div>
+        
+        <div id="village-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="village-name"></h2>
+                <div class="village-stats">
+                    <div class="stat-group">
+                        <h3>Население</h3>
+                        <p id="village-population"></p>
+                    </div>
+                    <div class="stat-group">
+                        <h3>Ресурсы</h3>
+                        <p>Еда: <span id="village-food"></span></p>
+                        <p>Дерево: <span id="village-wood"></span></p>
+                        <p>Камень: <span id="village-stone"></span></p>
+                        <p>Товары: <span id="village-goods"></span></p>
+                    </div>
+                </div>
+                <div class="village-buildings">
+                    <h3>Здания</h3>
+                    <div id="buildings-list"></div>
+                </div>
+                <div class="village-relations">
+                    <h3>Отношения</h3>
+                    <div class="relation-group">
+                        <h4>Союзники</h4>
+                        <div id="allies-list"></div>
+                    </div>
+                    <div class="relation-group">
+                        <h4>Враги</h4>
+                        <div id="enemies-list"></div>
+                    </div>
+                    <div class="relation-group">
+                        <h4>Нейтральные</h4>
+                        <div id="neutral-list"></div>
+                    </div>
+                </div>
+                <div class="village-news">
+                    <h3>Последние события</h3>
+                    <div id="village-events"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="archive-section" class="archive hidden">
+            <h3>Архив</h3>
+            <div class="archive-controls">
+                <select id="archive-year">
+                    <!-- Будет заполнено программно -->
+                </select>
+                <select id="archive-month">
+                    <!-- Будет заполнено программно -->
+                </select>
+                <select id="archive-day">
+                    <!-- Будет заполнено программно -->
+                </select>
+                <button id="view-archive">Просмотр</button>
+            </div>
+            <div id="archive-content"></div>
+        </div>
+    </div>
+    
+    <!-- Скрипты -->
+    <script src="js/world.js"></script>
+    <script src="js/village.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
